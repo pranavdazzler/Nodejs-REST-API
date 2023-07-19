@@ -10,7 +10,7 @@ services:
     volumes:
       - mongo_db:/data/db 
   api-nodejs:
-    build: .
+    image: pranavdazzler007/nodejs-api:latest
     ports:
       - 3000:3000
     environment:
