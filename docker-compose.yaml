@@ -8,16 +8,15 @@ services:
     ports:
       - "2717:27017"
     volumes:
-      - mongo-db:/data/db 
+      - mongo_db:/data/db 
   api-nodejs:
-    image: pranavdazzler007/api:latest
+    build: .
     ports:
       - 3000:3000
     environment:
       PORT: 3000
       MONGODB_URI: mongodb://mongo_db:27017
-      DB_NAME: my_db
-      NAME: pranav
+      DB_NAME: pranav
     depends_on:  
       - mongo_db 
 volumes:
